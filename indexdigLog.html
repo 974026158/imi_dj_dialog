@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            /* background: black; */
+            /* text-align: center; */
+            /* background-size: cover; */
+        }
+
+        .box {
+            width: 400px;
+            height: 600px;
+            background: #fff;
+            box-shadow: 0px 0px 5px #000;
+            border-radius: 10px;
+            display: none;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .header {
+            height: 60px;
+            background: #ee2400;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .header .logo {
+            width: 350px;
+            height: 88px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .header .hide {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #fff;
+            font-size: 16px;
+            float: right;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 50%;
+            color: #fff;
+            box-shadow: 0px 0px 5px #000;
+            margin: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .header .hide:hover {
+            width: 27px;
+            height: 27px;
+            line-height: 27px;
+
+        }
+
+        .center {
+            height: 400px;
+            background: #fff;
+            padding: 10px;
+            overflow: auto;
+
+        }
+
+        .center::-webkit-scrollbar {
+            width: 6px;
+            background-color: #ccc;
+        }
+
+        .center::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 6px;
+        }
+
+        .center::-webkit-scrollbar-track {
+            background-color: #fff;
+        }
+
+        .send {
+            height: 120px;
+        }
+
+        #sendContent {
+            width: 380px;
+            height: 55px;
+            border: none;
+            border-top: 1px solid #ddd;
+            outline: medium;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 15px;
+            color: #666;
+            overflow: auto;
+        }
+
+        #sendContent::-webkit-scrollbar {
+            width: 6px;
+            background-color: #ccc;
+        }
+
+        #sendContent::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 6px;
+        }
+
+        #sendContent::-webkit-scrollbar-track {
+            background-color: #fff;
+        }
+
+        .bottom {
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .bottom span {
+            text-decoration: underline;
+            font: 14px/40px 微软雅黑;
+        }
+
+        button {
+            float: right;
+            margin-right: 20px;
+            width: 80px;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            font-size: 14px;
+            background: #ee2400;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px #000;
+            margin-top: 5px;
+            transition: 0.7s;
+        }
+
+        .left {
+            width: 100%;
+            color: #ff6600;
+        }
+
+        .right {
+            float: right;
+            text-align: right;
+            width: 100%;
+        }
+
+        .right img {
+            border-radius: 50%;
+        }
+
+        .msg {
+            background: #ee2400;
+            ;
+            padding: 7px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            /* height: 15px; */
+            /* line-height: 15px; */
+            font-size: 14px;
+            max-width: 278px;
+            word-break: break-word;
+            text-align: left;
+            margin-bottom: 7px;
+            font-family: cursive;
+        }
+
+        .msgj {
+            background: #f8f8f8;
+            color: #666;
+            /* height: 15px; */
+            /* line-height: 15px; */
+            font-size: 14px;
+            margin-bottom: 7px;
+            font-family: cursive;
+
+        }
+
+        .show {
+            display: block;
+            position: absolute;
+            bottom: 100px;
+            right: 100px;
+            cursor: pointer;
+        }
+
+        .mask {
+            width: 110px;
+            height: 30px;
+            color: #666;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+            position: absolute;
+            right: 55px;
+            bottom: 55px;
+            display: none;
+        }
+
+
+        /* ::-webkit-scrollbar {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="show">
+        <img src="./timg.jpg" alt="" width="35" height="35" style="border-radius: 50%;float: left;">
+        <a href="javascript:void(0);"
+            style="color: #000;display: block;height: 39px;line-height: 39px;float: left;margin-left: 5px;">对话窗口</a>
+    </div>
+    <!--窗体面板 START-->
+    <div class="box">
+        <div class="mask"><img src="./s.png" alt="" style="width: 100%;">
+        </div>
+        <!--对话框的头部 START-->
+        <div class="header">
+            <div class="logo">
+                <!-- <img src="images/logo.png" /> -->
+            </div>
+            <div class="hide">X</div>
+        </div>
+        <!--对话框的头部 END-->
+        <!--聊天内容 START-->
+        <div class='center'>
+            <div class='left'>
+                <img width="35" height="35" src='./j.jpg' style="float: left;" />
+                <span class='msg msgj' style="float: left;margin-left: 5px;">你好，我是人工智能机器人，有什么可以为您效劳</span>
+            </div>
+            <!-- <div class='right'>
+                <img width='50' height='50' src='./r.jpg' style="float: right;" />
+                <span class='msg' style="float: right;margin-right: 5px;">你好，智能机器人</span>
+            </div> -->
+        </div>
+        <!--聊天内容 END-->
+        <!--底部区域 START-->
+        <div class="send">
+            <textarea type="text" id="sendContent" placeholder="请描述您的的问题" style="resize: none;"></textarea>
+            <div class="bottom">
+                <!-- <span>满意度调查</span> -->
+                <!-- <span>教我说说话吧</span> -->
+                <button>发送</button>
+            </div>
+        </div>
+        <!--底部区域 END-->
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="./jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".show").click(function () {
+            $(".box").toggle();
+            $(".show").toggle();
+        });
+        $(".hide").click(function () {
+            $(".box").toggle();
+            $(".show").toggle();
+        });
+        $("button").click(function () {
+            var content = $("#sendContent").val();
+            var center = $(".center");
+            if (content == "" || content.substring(0, content.length) == 0) {
+                $('.mask').fadeIn();
+                setTimeout(function () {
+                    $('.mask').fadeOut();
+                }, 1000)
+                $("#sendContent").val("");
+            } else {
+                var html = "<div class='right'><img width='35' height='35' src='./r.jpg' style='float: right;margin-right: 5px;'/><span class='msg' style='float: right;margin-right: 5px;''>" + content + "</span></div>";
+                center.append(html);
+                center.scrollTop(center[0].scrollHeight);
+                $("#sendContent").val("");
+                $.ajax({
+                    type: "get",
+                    url: "http://www.tuling123.com/openapi/api?key=f93970729cf4406fa6dca904790c9a0d&info=" + content,
+                    success: function (result) {
+                        var obj = result;
+                        var tmp = "<span>" + obj.text + "</span>";
+                        if (obj.url) {
+                            tmp += "<a href='" + obj.url + "' target=_blank>" + obj.text + "</a>";
+                        }
+                        var html = "<div class='left'><img width='35' height='35' src='./j.jpg' style='float: left;'/><span class='msg msgj' style='float: left;margin-left: 5px;'>" + tmp + "</span></div>";
+                        center.append(html);
+                        center.scrollTop(center[0].scrollHeight);
+                    }
+                });
+            }
+
+        });
+
+    });
+    window.onkeydown = function (event) {
+        var key = event.keyCode;
+        if (key == 13) {
+            $("button").click();
+        }
+    }
+</script>
